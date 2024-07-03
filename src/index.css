@@ -22,3 +22,21 @@
         padding: 0;
     }
 }
+
+@layer components{
+    .iconShodos{
+        position: relative;
+    }
+
+    .iconShodos::after{
+        position: absolute;
+        content: '';
+        right: 0px;
+        top: 0;
+        width: 13px;
+        height: 100%;
+        background: #A855E0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}
