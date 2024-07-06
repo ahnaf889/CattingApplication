@@ -19,7 +19,7 @@ const HomeLeft = () => {
           <div
             className={`${
               test == "home" &&
-              "w-full bg-white px-14 rounded-l-xl py-2  iconsShaded cursor-pointer"
+              "w-full bg-white px-14 rounded-l-xl py-5  iconsShaded cursor-pointer"
             }`}
           >
             <picture>
