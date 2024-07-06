@@ -4,14 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        PrimaryBlue: "#5F35F5",
-        FontColor: '#11175D',
-        SecoundColor: '#0000006b',
+        auth_primary_Color: "#11175D",
+        auth_secondary_color: "rgba(0, 0, 0, 0.50)",
+        primaryBlue: "#5F35F5",
+        textPrimaryColor: '#000000'
+        
       },
-      fontFamily:{
-        nonito : ["Nunito", 'sans-serif']
-      }
+      fontFamily: {
+        Custom_nunito: ["Nunito", "sans-serif"],
+        custom_poppins : ["Poppins", "sans-serif"]
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 };

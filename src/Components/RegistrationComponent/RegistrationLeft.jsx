@@ -1,12 +1,45 @@
 import React, { useState } from "react";
+import { IoEyeSharp, IoEyeOffSharp } from "react-icons/io5";
 
 const RegistrationLeft = () => {
-  const [fullname, Setfullname] = useState("Hello World");
+  // ================= Email ===================
+  const [email, setemail] = useState("");
+  console.log(email);
+
+  const handelEmail = (event) => {
+    setemail(event.target.value);
+  };
+
+  // ================= Fullname ===================
+  const [fullname, Setfullname] = useState("");
   console.log(fullname);
-  /**
-   * tudo: handleEmail funtion emplement
-   * @param({evnet})
-   */
+
+  const handleFullName = (event) => {
+    Setfullname(event.target.value);
+  };
+
+  // ================= Password ===================
+  const [password, setpassword] = useState("");
+  console.log(password);
+
+  const handlePassword = (event) => {
+    setpassword(event.target.value);
+  };
+
+  // ================= Eye ===================
+  const [Eyeopen, setEyeopen] = useState(false);
+
+  const handelEye = (event) => {
+    setEyeopen(!Eyeopen);
+  };
+
+  // ================= Button ===================
+  const handelButton = ()=>{
+    if(!email){
+      alert('Miss email')
+    }
+  }
+
   return (
     <>
       <div className="w-[60%] h-screen">
@@ -34,6 +67,7 @@ const RegistrationLeft = () => {
                   type="email"
                   name="email"
                   id="email"
+                  onChange={handelEmail}
                   className="pt-3 pl-[13px] font-nonito placeholder:text-[16.64px] placeholder:font-nonito placeholder:font-normal w-full "
                   placeholder="Your email address"
                 />
@@ -51,7 +85,7 @@ const RegistrationLeft = () => {
                   type="text"
                   name="FullName"
                   id="FullName"
-                  // onChange={handleFullName}
+                  onChange={handleFullName}
                   className="pt-3 pl-[13px] font-nonito placeholder:text-[16.64px] placeholder:font-nonito placeholder:font-normal w-full "
                   placeholder="Ladushing GTG"
                 />
@@ -65,19 +99,25 @@ const RegistrationLeft = () => {
                   htmlFor="Password"
                   className="text-FontColor text-[15px] flex font-nonito font-normal"
                 ></label>
-                <input
-                  type="password"
-                  name="Password"
-                  id="Password"
-                  // onChange={handlepassword}
-                  className="pt-3 pl-[13px] text-[20px] font-nonito placeholder:text-[25.64px] placeholder:font-nonito placeholder:font-normal w-full "
-                  placeholder=".........."
-                />
+
+                <div className="flex items-center justify-between">
+                  <input
+                    type={Eyeopen ? "text" : "Password"}
+                    name="Password"
+                    id="Password"
+                    onChange={handlePassword}
+                    className="pt-3 pl-[13px] text-[20px] font-nonito placeholder:text-[25.64px] placeholder:font-nonito placeholder:font-normal w-full "
+                    placeholder=".........."
+                  />
+                  <span className=" cursor-pointer" onClick={handelEye}>
+                    {Eyeopen? <IoEyeOffSharp /> : <IoEyeSharp />}
+                  </span>
+                </div>
               </fieldset>
             </div>
           </div>
 
-          <div className=" text-center">
+          <div className=" text-center" onClick={handelButton}>
             <button className="bg-PrimaryBlue w-[368px] text-[20.64px] text-white font-normal font-nonito rounded-[86px] h-[67.94px]">
               Sign up
             </button>
