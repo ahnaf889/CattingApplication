@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import GroupImg from "../../../../assets/HomeAssets/HomeRightAssets/GroupListAssets/g2.gif";
-const Friends = () => {
+const MyGroup = () => {
   return (
-    <div className="px-3 shadow-xl py-2  w-[400px] h-[300px] mt-5 rounded-xl ">
+    <div className="px-3 shadow-xl py-2  w-[32%] h-[400px] mt-5 rounded-xl ">
       <div className="flex items-center justify-between">
         <span className="font-custom_poppins font-semibold text-xl text-black">
-        My Groups
+          My Groups
         </span>
         <span className="text-2xl text-primaryBlue">
           <BsThreeDotsVertical />
@@ -28,7 +28,7 @@ const Friends = () => {
 
             <div className="flex flex-col items-center justify-center text-wrap w-[50%]  text-justify">
               <h3 className=" text-lg font-semibold font-custom_poppins text-textPrimaryColor">
-                Mern 2307 Offline
+                Friends Reunion
               </h3>
               <p className="opacity-55 text-md font-noraml font-custom_poppins text-textPrimaryColor">
                 Hi Guys, Wassup!
@@ -36,13 +36,15 @@ const Friends = () => {
             </div>
 
             <div>
-             <span className='font-custom_poppins text-textPrimaryColor opacity-50 text-sm'>Today, 8:56pm</span>
+              <span className="font-custom_poppins text-textPrimaryColor opacity-50 text-sm">
+                Today, 8:56pm
+              </span>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Friends
+export default MyGroup;
